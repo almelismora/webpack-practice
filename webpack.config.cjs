@@ -1,5 +1,5 @@
-const { default: HtmlWebpackPlugin } = require('html-webpack-plugin')
-const { default: MiniCssExtractPlugin } = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 
 module.exports = (_, argv) => ({
@@ -39,7 +39,7 @@ module.exports = (_, argv) => ({
             {
                 test: /\.css|s[ac]ss$/i,
                 exclude: /node_modules/,
-                use: [argv.mode === "development" ? "style-loader" : MiniCssExtractPlugin.loader, 'sass-loader', 'css-loader']
+                use: [argv.mode === "development" ? "style-loader" : MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             },
             {
                 test: /\.(png|jpg|jpeg|gif|svg|eot|ttf|woff|woff2|mp3|mp4|wav|webm)$/i,
